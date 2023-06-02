@@ -1,5 +1,6 @@
 import { Schema, Types } from "mongoose";
 
+// schema mongoose pour les souscriptions
 export class SubscriptionSchema {
   public static schemaName = "subscription";
 

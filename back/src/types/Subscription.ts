@@ -1,3 +1,4 @@
+// type correspondant au format d'un objet subscription récupéré depuis la base de données
 export type Subscription = {
   _id: string;
   Company: string;

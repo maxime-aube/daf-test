@@ -4,12 +4,11 @@ import { SubscriptionSchema } from "../database/schema/SubscriptionSchema";
 import { QueryOptions } from "../types/QueryOptions";
 
 export class SubscriptionRepository extends Repository {
-  // modif : param = mongoose instance
   constructor(database: Mongoose) {
     super(database, database.model(SubscriptionSchema.schemaName));
   }
 
-  // retourne le tableau de subscriptions
+  // envoie la requête à la base de données mongodb avec les options de requête et retourne le tableau de subscriptions
   async find(options: QueryOptions): Promise<any> {
     const res = await this.model
       .find(

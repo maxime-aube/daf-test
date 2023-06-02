@@ -1,3 +1,4 @@
+// type correspondant à l'objet d'options pour la requête
 export type QueryOptions = {
   select: string;
   limit: number;

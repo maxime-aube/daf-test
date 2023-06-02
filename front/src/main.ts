@@ -25,6 +25,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   </div>
 `
 
+// ajout d'un event listener sur le bouton pour gérer la requête
 const url = "http://127.0.0.1:8080/subscriptions";
 const reqBtnElm = document.querySelector<HTMLButtonElement>('#req-btn')!;
 reqBtnElm.addEventListener('click', () => {

@@ -18,11 +18,11 @@ export class SubscriptionService {
   };
 
   // injection du repository dans le service.
-  //
   constructor(repository: SubscriptionRepository) {
     this.repository = repository;
   }
 
+  // envoie la requête au repository et retourne le résultat formatté
   async subscriptionContrats() {
     const subscriptions = await this.repository.find(this.options);
     return subscriptions.map((subscription: Subscription) => {
@@ -31,11 +31,5 @@ export class SubscriptionService {
         contract_reference: subscription.contract_reference,
       };
     });
-
-    /**
-    4. Retournez le tableau final dans un objet possédant deux paires de key-value : 
-    - "success: true"
-    - "references: [votretableau]"
-    */
   }
 }
