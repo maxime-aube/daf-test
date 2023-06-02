@@ -3,6 +3,13 @@ import typescriptLogo from './typescript.svg'
 import viteLogo from '/vite.svg'
 import { requestHandler } from './requester.ts'
 
+// import des variables d'environnement
+const {
+  VITE_hostname,
+  VITE_port,
+  VITE_route
+} = import.meta.env;
+
 // hydratation de la page avec contenu demo setup vite + ts
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>
@@ -26,7 +33,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 `
 
 // ajout d'un event listener sur le bouton pour gérer la requête
-const url = "http://127.0.0.1:8080/subscriptions";
+const url = `http://${VITE_hostname}:${VITE_port}/${VITE_route}`;
 const reqBtnElm = document.querySelector<HTMLButtonElement>('#req-btn')!;
 reqBtnElm.addEventListener('click', () => {
   requestHandler(url)
