@@ -25,7 +25,6 @@ export class SubscriptionService {
 
   async subscriptionContrats() {
     const subscriptions = await this.repository.find(this.options);
-    console.log(subscriptions);
     return subscriptions.map((subscription: Subscription) => {
       return {
         _id: subscription._id,
